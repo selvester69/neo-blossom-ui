@@ -8,57 +8,6 @@
 
 @layer base {
   :root {
-    /* NeoPOP Core Colors - Vibrant Neon Palette */
-    --background: 220 13% 9%;
-    --foreground: 300 100% 97%;
-
-    /* Neon Accent Colors */
-    --neon-cyan: 180 100% 50%;
-    --neon-magenta: 300 100% 70%;
-    --neon-yellow: 60 100% 60%;
-    --neon-green: 120 100% 50%;
-    --neon-orange: 30 100% 60%;
-    --neon-purple: 270 100% 70%;
-    --neon-pink: 330 100% 70%;
-    --neon-blue: 210 100% 60%;
-
-    /* Surface Colors */
-    --card: 220 13% 12%;
-    --card-foreground: 300 100% 97%;
-    --card-glow: 300 100% 70%;
-
-    --popover: 220 13% 15%;
-    --popover-foreground: 300 100% 97%;
-
-    /* Primary Brand Colors */
-    --primary: 300 100% 70%;
-    --primary-foreground: 220 13% 9%;
-    --primary-glow: 300 100% 85%;
-
-    /* Secondary Colors */
-    --secondary: 180 100% 50%;
-    --secondary-foreground: 220 13% 9%;
-    --secondary-glow: 180 100% 65%;
-
-    /* Status Colors */
-    --success: 120 100% 50%;
-    --success-foreground: 220 13% 9%;
-    --warning: 60 100% 60%;
-    --warning-foreground: 220 13% 9%;
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 220 13% 9%;
-
-    /* Neutral Colors */
-    --muted: 220 13% 18%;
-    --muted-foreground: 300 20% 70%;
-    --accent: 220 13% 20%;
-    --accent-foreground: 300 100% 97%;
-
-    /* Interactive Elements */
-    --border: 300 50% 30%;
-    --input: 220 13% 15%;
-    --ring: 300 100% 70%;
-
     /* Geometric Properties */
     --radius: 0.75rem;
     --shadow-3d: 4px 4px 0px;
@@ -69,12 +18,123 @@
     --transition-normal: 300ms;
     --transition-slow: 500ms;
 
+    /* Neon Accent Colors - Consistent across themes */
+    --neon-cyan: 180 100% 50%;
+    --neon-magenta: 300 100% 70%;
+    --neon-yellow: 60 100% 60%;
+    --neon-green: 120 100% 50%;
+    --neon-orange: 30 100% 60%;
+    --neon-purple: 270 100% 70%;
+    --neon-pink: 330 100% 70%;
+    --neon-blue: 210 100% 60%;
+  }
+
+  /* ===== THEME 1: LIGHT THEME (Default) ===== */
+  .light {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --card-glow: 210 40% 80%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    /* Primary Brand Colors */
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 240 5% 64%;
+    
+    /* Secondary Colors */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --secondary-glow: 240 5% 84%;
+    
+    /* Status Colors */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+    --warning: 32.1 94.6% 43.7%;
+    --warning-foreground: 355.7 100% 97.3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Neutral Colors */
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    /* Interactive Elements */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64%;
+    
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(240 5.9% 10%), hsl(240 3.8% 46.1%));
+    --gradient-sunset: linear-gradient(135deg, hsl(32.1 94.6% 43.7%), hsl(330 81.2% 60.4%));
+    --gradient-cyber: linear-gradient(135deg, hsl(262.1 83.3% 57.8%), hsl(221.2 83.2% 53.3%));
+    --gradient-matrix: linear-gradient(180deg, hsl(142.1 76.2% 36.3%), hsl(240 4.8% 95.9%));
+    
+    /* 3D Shadow Styles */
+    --shadow-primary: var(--shadow-3d) hsl(var(--primary) / 0.2);
+    --shadow-secondary: var(--shadow-3d) hsl(var(--secondary) / 0.2);
+    --shadow-success: var(--shadow-3d) hsl(var(--success) / 0.2);
+    --shadow-warning: var(--shadow-3d) hsl(var(--warning) / 0.2);
+    --shadow-destructive: var(--shadow-3d) hsl(var(--destructive) / 0.2);
+  }
+
+  /* ===== THEME 2: DARK THEME (NeoPOP Cyberpunk) ===== */
+  .dark {
+    /* Base Colors */
+    --background: 220 13% 9%;
+    --foreground: 300 100% 97%;
+    
+    /* Surface Colors */
+    --card: 220 13% 12%;
+    --card-foreground: 300 100% 97%;
+    --card-glow: 300 100% 70%;
+    
+    --popover: 220 13% 15%;
+    --popover-foreground: 300 100% 97%;
+    
+    /* Primary Brand Colors */
+    --primary: 300 100% 70%;
+    --primary-foreground: 220 13% 9%;
+    --primary-glow: 300 100% 85%;
+    
+    /* Secondary Colors */
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 220 13% 9%;
+    --secondary-glow: 180 100% 65%;
+    
+    /* Status Colors */
+    --success: 120 100% 50%;
+    --success-foreground: 220 13% 9%;
+    --warning: 60 100% 60%;
+    --warning-foreground: 220 13% 9%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 220 13% 9%;
+    
+    /* Neutral Colors */
+    --muted: 220 13% 18%;
+    --muted-foreground: 300 20% 70%;
+    --accent: 220 13% 20%;
+    --accent-foreground: 300 100% 97%;
+    
+    /* Interactive Elements */
+    --border: 300 50% 30%;
+    --input: 220 13% 15%;
+    --ring: 300 100% 70%;
+    
     /* Gradients */
     --gradient-neon: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
     --gradient-sunset: linear-gradient(135deg, hsl(var(--neon-orange)), hsl(var(--neon-pink)));
     --gradient-cyber: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-blue)));
     --gradient-matrix: linear-gradient(180deg, hsl(var(--neon-green)), hsl(var(--background)));
-
+    
     /* 3D Shadow Styles */
     --shadow-primary: var(--shadow-3d) hsl(var(--primary) / 0.6);
     --shadow-secondary: var(--shadow-3d) hsl(var(--secondary) / 0.6);
@@ -83,16 +143,175 @@
     --shadow-destructive: var(--shadow-3d) hsl(var(--destructive) / 0.6);
   }
 
-  /* Light mode variant - Inverted NeoPOP */
-  .light {
-    --background: 300 100% 97%;
-    --foreground: 220 13% 9%;
-    --card: 300 50% 95%;
-    --card-foreground: 220 13% 9%;
-    --border: 300 50% 80%;
-    --input: 300 50% 93%;
-    --muted: 300 30% 90%;
-    --muted-foreground: 220 20% 40%;
+  /* ===== THEME 3: PURE WHITE THEME (Minimal High-Contrast) ===== */
+  .pure-white {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --card-glow: 0 0% 50%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    /* Primary Brand Colors */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 0% 30%;
+    
+    /* Secondary Colors */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
+    --secondary-glow: 0 0% 70%;
+    
+    /* Status Colors */
+    --success: 120 60% 20%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 90% 35%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 80% 40%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Neutral Colors */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* Interactive Elements */
+    --border: 0 0% 85%;
+    --input: 0 0% 98%;
+    --ring: 0 0% 50%;
+    
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 40%));
+    --gradient-sunset: linear-gradient(135deg, hsl(0 0% 20%), hsl(0 0% 60%));
+    --gradient-cyber: linear-gradient(135deg, hsl(0 0% 15%), hsl(0 0% 45%));
+    --gradient-matrix: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 90%));
+    
+    /* 3D Shadow Styles */
+    --shadow-primary: var(--shadow-3d) hsl(0 0% 0% / 0.3);
+    --shadow-secondary: var(--shadow-3d) hsl(0 0% 50% / 0.2);
+    --shadow-success: var(--shadow-3d) hsl(120 60% 20% / 0.3);
+    --shadow-warning: var(--shadow-3d) hsl(45 90% 35% / 0.3);
+    --shadow-destructive: var(--shadow-3d) hsl(0 80% 40% / 0.3);
+  }
+
+  /* ===== THEME 4: TRUE BLACK THEME (OLED Optimized) ===== */
+  .true-black {
+    /* Base Colors */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    
+    /* Surface Colors */
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+    --card-glow: 0 0% 70%;
+    
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* Primary Brand Colors */
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 0 0% 80%;
+    
+    /* Secondary Colors */
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 0 0% 60%;
+    
+    /* Status Colors */
+    --success: 120 100% 70%;
+    --success-foreground: 0 0% 0%;
+    --warning: 60 100% 70%;
+    --warning-foreground: 0 0% 0%;
+    --destructive: 0 100% 70%;
+    --destructive-foreground: 0 0% 0%;
+    
+    /* Neutral Colors */
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Interactive Elements */
+    --border: 0 0% 20%;
+    --input: 0 0% 8%;
+    --ring: 0 0% 80%;
+    
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 60%));
+    --gradient-sunset: linear-gradient(135deg, hsl(0 0% 80%), hsl(0 0% 40%));
+    --gradient-cyber: linear-gradient(135deg, hsl(0 0% 90%), hsl(0 0% 50%));
+    --gradient-matrix: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 10%));
+    
+    /* 3D Shadow Styles */
+    --shadow-primary: var(--shadow-3d) hsl(0 0% 100% / 0.3);
+    --shadow-secondary: var(--shadow-3d) hsl(0 0% 50% / 0.3);
+    --shadow-success: var(--shadow-3d) hsl(120 100% 70% / 0.3);
+    --shadow-warning: var(--shadow-3d) hsl(60 100% 70% / 0.3);
+    --shadow-destructive: var(--shadow-3d) hsl(0 100% 70% / 0.3);
+  }
+
+  /* ===== THEME 5: E-COMMERCE DARK THEME (Premium Shopping) ===== */
+  .ecommerce-dark {
+    /* Base Colors */
+    --background: 220 30% 10%;
+    --foreground: 210 20% 98%;
+    
+    /* Surface Colors */
+    --card: 220 25% 14%;
+    --card-foreground: 210 20% 98%;
+    --card-glow: 45 100% 70%;
+    
+    --popover: 220 25% 16%;
+    --popover-foreground: 210 20% 98%;
+    
+    /* Primary Brand Colors - Gold for Premium */
+    --primary: 45 100% 51%;
+    --primary-foreground: 220 30% 10%;
+    --primary-glow: 45 100% 65%;
+    
+    /* Secondary Colors - Electric Blue for CTAs */
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 220 30% 10%;
+    --secondary-glow: 195 100% 65%;
+    
+    /* Status Colors */
+    --success: 143 85% 50%;
+    --success-foreground: 220 30% 10%;
+    --warning: 25 95% 60%;
+    --warning-foreground: 220 30% 10%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    /* Neutral Colors */
+    --muted: 220 20% 20%;
+    --muted-foreground: 210 15% 70%;
+    --accent: 220 20% 22%;
+    --accent-foreground: 210 20% 98%;
+    
+    /* Interactive Elements */
+    --border: 220 15% 30%;
+    --input: 220 25% 16%;
+    --ring: 45 100% 51%;
+    
+    /* E-Commerce Specific Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(45 100% 51%), hsl(195 100% 50%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 95% 60%), hsl(45 100% 51%));
+    --gradient-cyber: linear-gradient(135deg, hsl(195 100% 50%), hsl(220 30% 10%));
+    --gradient-matrix: linear-gradient(180deg, hsl(143 85% 50%), hsl(220 25% 14%));
+    
+    /* Premium 3D Shadow Styles */
+    --shadow-primary: var(--shadow-3d) hsl(45 100% 51% / 0.4);
+    --shadow-secondary: var(--shadow-3d) hsl(195 100% 50% / 0.4);
+    --shadow-success: var(--shadow-3d) hsl(143 85% 50% / 0.4);
+    --shadow-warning: var(--shadow-3d) hsl(25 95% 60% / 0.4);
+    --shadow-destructive: var(--shadow-3d) hsl(0 85% 60% / 0.4);
   }
 }
 
