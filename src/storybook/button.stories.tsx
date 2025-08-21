@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../components/ui/button';
+import { ButtonGroup } from '../components/ui/button-group';
+import { Fab } from '../components/ui/fab';
+import { Plus } from 'lucide-react';
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -8,7 +11,20 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link', 'neon', 'cyber', 'matrix', 'hero'],
+      options: [
+        'default',
+        'destructive',
+        'success',
+        'warning',
+        'outline',
+        'secondary',
+        'ghost',
+        'link',
+        'neon',
+        'cyber',
+        'matrix',
+        'hero',
+      ],
       description: 'The variant of the button.',
     },
     size: {
@@ -123,4 +139,36 @@ export const Icon: Story = {
     children: '👍',
     size: 'icon',
   },
+};
+
+export const Success: Story = {
+  args: {
+    children: 'Button',
+    variant: 'success',
+  },
+};
+
+export const Warning: Story = {
+  args: {
+    children: 'Button',
+    variant: 'warning',
+  },
+};
+
+export const Group: Story = {
+  render: (args) => (
+    <ButtonGroup>
+      <Button variant="outline">Left</Button>
+      <Button variant="outline">Middle</Button>
+      <Button variant="outline">Right</Button>
+    </ButtonGroup>
+  ),
+};
+
+export const FloatingActionButton: Story = {
+  render: (args) => (
+    <Fab {...args}>
+      <Plus />
+    </Fab>
+  ),
 };
