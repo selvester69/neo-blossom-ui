@@ -389,6 +389,82 @@ const Small = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
 );
 Small.displayName = "Small";
 
+// Caption Component
+const Caption = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <caption ref={ref} className={cn("text-sm text-muted-foreground", className)} {...props} />
+  )
+);
+Caption.displayName = "Caption";
+
+// Pre Component
+const Pre = forwardRef<HTMLPreElement, HTMLAttributes<HTMLPreElement>>(
+  ({ className, ...props }, ref) => (
+    <pre
+      ref={ref}
+      className={cn("rounded-lg bg-muted p-4 font-mono text-sm overflow-x-auto", className)}
+      {...props}
+    />
+  )
+);
+Pre.displayName = "Pre";
+
+// Quote Component
+const Quote = forwardRef<HTMLQuoteElement, HTMLAttributes<HTMLQuoteElement>>(
+  ({ className, ...props }, ref) => (
+    <q ref={ref} className={cn("italic", className)} {...props} />
+  )
+);
+Quote.displayName = "Quote";
+
+// Acronym Component
+const Acronym = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <abbr ref={ref} className={cn("underline decoration-dotted", className)} {...props} />
+  )
+);
+Acronym.displayName = "Acronym";
+
+// Definition Component
+const Definition = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <dfn ref={ref} className={cn("italic", className)} {...props} />
+  )
+);
+Definition.displayName = "Definition";
+
+// Variable Component
+const Variable = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <var ref={ref} className={cn("font-mono italic", className)} {...props} />
+  )
+);
+Variable.displayName = "Variable";
+
+// Sample Component
+const Sample = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <samp ref={ref} className={cn("font-mono", className)} {...props} />
+  )
+);
+Sample.displayName = "Sample";
+
+// Time Component
+const Time = forwardRef<HTMLTimeElement, React.TimeHTMLAttributes<HTMLTimeElement>>(
+  ({ className, ...props }, ref) => (
+    <time ref={ref} className={cn("", className)} {...props} />
+  )
+);
+Time.displayName = "Time";
+
+// Address Component
+const Address = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <address ref={ref} className={cn("not-italic", className)} {...props} />
+  )
+);
+Address.displayName = "Address";
+
 export {
   Heading,
   Text,
@@ -409,4 +485,13 @@ export {
   Strong,
   Emphasis,
   Small,
+  Caption,
+  Pre,
+  Quote,
+  Acronym,
+  Definition,
+  Variable,
+  Sample,
+  Time,
+  Address,
 };

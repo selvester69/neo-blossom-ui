@@ -19,6 +19,15 @@ import {
   Strong,
   Emphasis,
   Small,
+  Caption,
+  Pre,
+  Quote,
+  Acronym,
+  Definition,
+  Variable,
+  Sample,
+  Time,
+  Address,
 } from '../components/ui/typography';
 
 const meta: Meta = {
@@ -105,6 +114,31 @@ export const InlineElements: Story = {
       <Blockquote>
         A quote from a book. <Cite>Book Title</Cite>
       </Blockquote>
+      <Pre>
+        This is a preformatted text block.
+      </Pre>
+      <Text>
+        This is a <Quote>quote</Quote>.
+      </Text>
+      <Text>
+        This is an <Acronym title="National Aeronautics and Space Administration">NASA</Acronym>.
+      </Text>
+      <Text>
+        The <Definition>definition</Definition> of a word.
+      </Text>
+      <Text>
+        This is a <Variable>variable</Variable>.
+      </Text>
+      <Text>
+        This is a <Sample>sample output</Sample>.
+      </Text>
+      <Text>
+        The time is <Time dateTime="2024-01-01T12:00:00">noon</Time>.
+      </Text>
+      <Address>
+        123 Main St, Anytown, USA
+      </Address>
+      <Caption>This is a caption.</Caption>
     </div>
   ),
 };
