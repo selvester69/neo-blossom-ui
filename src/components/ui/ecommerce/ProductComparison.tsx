@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/table"
 import { ProductImage } from "./ProductImage"
 import { StarRating } from "./StarRating"
-import { Button } from "./button"
+import { Button } from "@/components/ui/button"
 import { Trash2 } from "lucide-react"
 
 export interface ProductToCompare {
