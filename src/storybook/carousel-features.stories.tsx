@@ -9,11 +9,15 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
+import Fade from "embla-carousel-fade"
 
-const CarouselFeaturesDemo = ({ orientation, loop, autoplay }: { orientation: 'horizontal' | 'vertical', loop: boolean, autoplay: boolean }) => {
+const CarouselFeaturesDemo = ({ orientation, loop, autoplay, fade }: { orientation: 'horizontal' | 'vertical', loop: boolean, autoplay: boolean, fade: boolean }) => {
     const plugins = [];
     if (autoplay) {
         plugins.push(Autoplay({ delay: 2000, stopOnInteraction: true }));
+    }
+    if (fade) {
+        plugins.push(Fade());
     }
 
     return (
@@ -64,6 +68,9 @@ const meta: Meta = {
     },
     autoplay: {
         control: 'boolean',
+    },
+    fade: {
+        control: 'boolean',
     }
   }
 };
@@ -76,6 +83,7 @@ export const AutoplayStory: StoryObj = {
         orientation: 'horizontal',
         loop: true,
         autoplay: true,
+        fade: false,
     }
 };
 
@@ -85,6 +93,7 @@ export const InfiniteLoopStory: StoryObj = {
         orientation: 'horizontal',
         loop: true,
         autoplay: false,
+        fade: false,
     }
 };
 
@@ -94,5 +103,16 @@ export const VerticalStory: StoryObj = {
         orientation: 'vertical',
         loop: false,
         autoplay: false,
+        fade: false,
+    }
+};
+
+export const FadeStory: StoryObj = {
+    name: "Fade",
+    args: {
+        orientation: 'horizontal',
+        loop: true,
+        autoplay: true,
+        fade: true,
     }
 };
