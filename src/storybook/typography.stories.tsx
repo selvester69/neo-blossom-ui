@@ -7,6 +7,18 @@ import {
   Blockquote,
   List,
   ListItem,
+  Cite,
+  Abbr,
+  Mark,
+  Highlight,
+  Strikethrough,
+  Underline,
+  Subscript,
+  Superscript,
+  KBD,
+  Strong,
+  Emphasis,
+  Small,
 } from '../components/ui/typography';
 
 const meta: Meta = {
@@ -59,6 +71,40 @@ export const Default: Story = {
           });
         `}
       </Code>
+    </div>
+  ),
+};
+
+export const InlineElements: Story = {
+  render: (args) => (
+    <div className="p-8 space-y-4">
+      <Text>
+        This is a paragraph with <Strong>strong</Strong> text and{' '}
+        <Emphasis>emphasized</Emphasis> text.
+      </Text>
+      <Text>
+        You can use <Underline>underline</Underline> and{' '}
+        <Strikethrough>strikethrough</Strikethrough>.
+      </Text>
+      <Text>
+        This is <Subscript>subscript</Subscript> and this is{' '}
+        <Superscript>superscript</Superscript>.
+      </Text>
+      <Text>
+        Here is an abbreviation: <Abbr title="HyperText Markup Language">HTML</Abbr>.
+      </Text>
+      <Text>
+        You can <Mark>mark</Mark> text or <Highlight>highlight</Highlight> it.
+      </Text>
+      <Text>
+        Press <KBD>Ctrl + C</KBD> to copy.
+      </Text>
+      <Text>
+        This is a <Small>small</Small> text.
+      </Text>
+      <Blockquote>
+        A quote from a book. <Cite>Book Title</Cite>
+      </Blockquote>
     </div>
   ),
 };

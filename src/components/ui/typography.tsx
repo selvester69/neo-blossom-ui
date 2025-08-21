@@ -10,7 +10,7 @@ const headingVariants = cva(
       level: {
         1: "text-4xl lg:text-5xl xl:text-6xl leading-tight",
         2: "text-3xl lg:text-4xl xl:text-5xl leading-tight",
-        3: "text-2xl lg:text-3xl xl:text-4xl leading-snug", 
+        3: "text-2xl lg:text-3xl xl:text-4xl leading-snug",
         4: "text-xl lg:text-2xl xl:text-3xl leading-snug",
         5: "text-lg lg:text-xl xl:text-2xl leading-snug",
         6: "text-base lg:text-lg xl:text-xl leading-snug"
@@ -38,16 +38,16 @@ const headingVariants = cva(
   }
 );
 
-interface HeadingProps 
+interface HeadingProps
   extends Omit<HTMLAttributes<HTMLHeadingElement>, 'level'>,
     VariantProps<typeof headingVariants> {
   level: 1 | 2 | 3 | 4 | 5 | 6;
   children: ReactNode;
 }
 
-export const Heading = ({ className, level, variant, animation, children, ...props }: HeadingProps) => {
+const Heading = ({ className, level, variant, animation, children, ...props }: HeadingProps) => {
   const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  
+
   return (
     <Tag
       className={cn(headingVariants({ level, variant, animation }), className)}
@@ -57,6 +57,7 @@ export const Heading = ({ className, level, variant, animation, children, ...pro
     </Tag>
   );
 };
+Heading.displayName = "Heading";
 
 // Text Component
 const textVariants = cva(
@@ -67,7 +68,7 @@ const textVariants = cva(
         xs: "text-xs",
         sm: "text-sm",
         base: "text-base",
-        lg: "text-lg", 
+        lg: "text-lg",
         xl: "text-xl",
         "2xl": "text-2xl"
       },
@@ -96,11 +97,11 @@ const textVariants = cva(
   }
 );
 
-interface TextProps 
+interface TextProps
   extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof textVariants> {}
 
-export const Text = forwardRef<HTMLParagraphElement, TextProps>(
+const Text = forwardRef<HTMLParagraphElement, TextProps>(
   ({ className, size, variant, weight, children, ...props }, ref) => {
     return (
       <p
@@ -121,7 +122,7 @@ interface CodeProps extends HTMLAttributes<HTMLElement> {
   neon?: boolean;
 }
 
-export const Code = forwardRef<HTMLElement, CodeProps>(
+const Code = forwardRef<HTMLElement, CodeProps>(
   ({ className, variant = 'inline', neon = false, children, ...props }, ref) => {
     if (variant === 'block') {
       return (
@@ -175,14 +176,14 @@ const linkVariants = cva(
   }
 );
 
-interface LinkProps 
+interface LinkProps
   extends HTMLAttributes<HTMLAnchorElement>,
     VariantProps<typeof linkVariants> {
   href?: string;
   external?: boolean;
 }
 
-export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(
   ({ className, variant, href, external = false, children, ...props }, ref) => {
     return (
       <a
@@ -205,7 +206,7 @@ interface BlockquoteProps extends HTMLAttributes<HTMLQuoteElement> {
   cite?: string;
 }
 
-export const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
+const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
   ({ className, neon = false, cite, children, ...props }, ref) => {
     return (
       <blockquote
@@ -231,9 +232,9 @@ interface ListProps extends HTMLAttributes<HTMLUListElement | HTMLOListElement> 
   neon?: boolean;
 }
 
-export const List = ({ className, variant = 'unordered', neon = false, children, ...props }: ListProps) => {
+const List = ({ className, variant = 'unordered', neon = false, children, ...props }: ListProps) => {
   const Tag = variant === 'ordered' ? 'ol' : 'ul';
-  
+
   return (
     <Tag
       className={cn(
@@ -248,12 +249,13 @@ export const List = ({ className, variant = 'unordered', neon = false, children,
     </Tag>
   );
 };
+List.displayName = "List";
 
 interface ListItemProps extends HTMLAttributes<HTMLLIElement> {
   neon?: boolean;
 }
 
-export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
+const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
   ({ className, neon = false, children, ...props }, ref) => {
     return (
       <li
@@ -271,3 +273,140 @@ export const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
   }
 );
 ListItem.displayName = "ListItem";
+
+// Cite Component
+const Cite = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <cite ref={ref} className={cn("not-italic", className)} {...props} />
+  )
+);
+Cite.displayName = "Cite";
+
+// Abbr Component
+const Abbr = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <abbr
+      ref={ref}
+      className={cn("underline decoration-dotted", className)}
+      {...props}
+    />
+  )
+);
+Abbr.displayName = "Abbr";
+
+// Mark Component
+const Mark = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <mark
+      ref={ref}
+      className={cn("bg-yellow-300 text-yellow-800 px-1", className)}
+      {...props}
+    />
+  )
+);
+Mark.displayName = "Mark";
+
+// Highlight Component (similar to Mark, but can be used for other colors)
+const Highlight = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <mark
+      ref={ref}
+      className={cn("bg-primary/20 text-primary px-1", className)}
+      {...props}
+    />
+  )
+);
+Highlight.displayName = "Highlight";
+
+// Strikethrough Component
+const Strikethrough = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <s ref={ref} className={cn("", className)} {...props} />
+  )
+);
+Strikethrough.displayName = "Strikethrough";
+
+// Underline Component
+const Underline = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <u ref={ref} className={cn("", className)} {...props} />
+  )
+);
+Underline.displayName = "Underline";
+
+// Subscript Component
+const Subscript = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <sub ref={ref} className={cn("align-sub text-xs", className)} {...props} />
+  )
+);
+Subscript.displayName = "Subscript";
+
+// Superscript Component
+const Superscript = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <sup ref={ref} className={cn("align-super text-xs", className)} {...props} />
+  )
+);
+Superscript.displayName = "Superscript";
+
+// KBD Component
+const KBD = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <kbd
+      ref={ref}
+      className={cn(
+        "px-2 py-1.5 text-xs font-sans bg-muted text-muted-foreground rounded-md border border-b-2",
+        className
+      )}
+      {...props}
+    />
+  )
+);
+KBD.displayName = "KBD";
+
+// Strong Component
+const Strong = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <strong ref={ref} className={cn("font-bold", className)} {...props} />
+  )
+);
+Strong.displayName = "Strong";
+
+// Emphasis Component
+const Emphasis = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <em ref={ref} className={cn("italic", className)} {...props} />
+  )
+);
+Emphasis.displayName = "Emphasis";
+
+// Small Component
+const Small = forwardRef<HTMLElement, HTMLAttributes<HTMLElement>>(
+  ({ className, ...props }, ref) => (
+    <small ref={ref} className={cn("text-sm", className)} {...props} />
+  )
+);
+Small.displayName = "Small";
+
+export {
+  Heading,
+  Text,
+  Code,
+  Link,
+  Blockquote,
+  List,
+  ListItem,
+  Cite,
+  Abbr,
+  Mark,
+  Highlight,
+  Strikethrough,
+  Underline,
+  Subscript,
+  Superscript,
+  KBD,
+  Strong,
+  Emphasis,
+  Small,
+};
