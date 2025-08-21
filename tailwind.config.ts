@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -143,7 +144,18 @@ export default {
 				'cyber-scan': {
 					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(100%)' }
-				}
+				},
+                'bounce': {
+                    '0%, 100%': { transform: 'translateY(-25%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+                    '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+                },
+                'wave': {
+                    '0%, 40%, 100%': { transform: 'scaleY(0.4)' },
+                    '20%': { transform: 'scaleY(1.0)' },
+                },
+                'shimmer': {
+                    '100%': { transform: 'translateX(100%)' },
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -151,9 +163,12 @@ export default {
 				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
 				'glitch': 'glitch 0.3s ease-in-out',
 				'float': 'float 3s ease-in-out infinite',
-				'cyber-scan': 'cyber-scan 2s linear infinite'
+				'cyber-scan': 'cyber-scan 2s linear infinite',
+                'bounce': 'bounce 1s infinite',
+                'wave': 'wave 1.2s infinite ease-in-out',
+                'shimmer': 'shimmer 2s infinite',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;
