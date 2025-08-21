@@ -59,21 +59,15 @@ export const ComponentShowcase = () => {
               <Badge variant="outline">Accessible</Badge>
             </div>
             <Stack direction="row" spacing="md" justify="center" className="flex-wrap">
-              <Button variant="hero" size="lg" asChild>
-                <Link href="/documentation">
-                  Get Started
-                  <ChevronRight variant="neon" size="sm" />
-                </Link>
+              <Button variant="hero" size="lg">
+                Get Started
+                <ChevronRight variant="neon" size="sm" />
               </Button>
-              <Button variant="cyber" size="lg" asChild>
-                <Link href="/documentation">
-                  View Components
-                </Link>
+              <Button variant="cyber" size="lg">
+                View Components
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/documentation">
-                  Documentation
-                </Link>
+              <Button variant="outline" size="lg">
+                Documentation
               </Button>
             </Stack>
           </div>
@@ -363,10 +357,10 @@ function App() {
             </Text>
             <Spacer size="sm" />
             <Stack direction="row" spacing="lg" justify="center" className="flex-wrap">
-              <a href="/documentation" className="text-neon-cyan hover:text-neon-cyan/80 transition-colors">GitHub</a>
-              <a href="/documentation" className="text-neon-cyan hover:text-neon-cyan/80 transition-colors">Documentation</a>
-              <a href="/documentation" className="text-neon-cyan hover:text-neon-cyan/80 transition-colors">Storybook</a>
-              <a href="/documentation" className="text-neon-cyan hover:text-neon-cyan/80 transition-colors">NPM Package</a>
+              <Link variant="cyber" href="#">GitHub</Link>
+              <Link variant="cyber" href="#">Documentation</Link>
+              <Link variant="cyber" href="#">Storybook</Link>
+              <Link variant="cyber" href="#">NPM Package</Link>
             </Stack>
           </div>
         </Container>
