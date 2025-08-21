@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Status } from '../components/ui/status';
 import { StatusIndicator } from '../components/ui/status-indicator';
 

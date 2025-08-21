@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Header } from '../components/ui/header';
 import { Footer } from '../components/ui/footer';
 import { Main } from '../components/ui/main';

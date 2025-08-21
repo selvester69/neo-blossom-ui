@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Chip } from '../components/ui/chip';
 
 const meta: Meta<typeof Chip> = {

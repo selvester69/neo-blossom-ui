@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Progress } from '../components/ui/progress';
 import { Skeleton } from '../components/ui/skeleton';
 import { Status } from '../components/ui/status';

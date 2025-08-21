@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ReadReceipt } from '../components/ui/read-receipt';
 
 const meta: Meta<typeof ReadReceipt> = {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Callout, CalloutDescription, CalloutTitle } from '../components/ui/callout';
 
 const meta: Meta<typeof Callout> = {

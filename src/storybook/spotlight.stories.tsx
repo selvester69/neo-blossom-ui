@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import * as React from 'react';
 import { Spotlight } from '../components/ui/spotlight';
 import { Button } from '../components/ui/button';
